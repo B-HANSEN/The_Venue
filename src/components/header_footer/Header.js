@@ -6,9 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SideDrawer from './SideDrawer';
 
 class Header extends Component {
-	state = {
-		drawerOpen: false,
-	};
+	state = { drawerOpen: false };
 
 	toggleDrawer = value => {
 		this.setState({
