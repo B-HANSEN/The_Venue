@@ -6,7 +6,26 @@ import IconButton from '@material-ui/core/IconButton';
 import SideDrawer from './SideDrawer';
 
 class Header extends Component {
-	state = { drawerOpen: false };
+	state = { drawerOpen: false, headerShow: false };
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+	}
+
+	// if working with more routes and in other routes, this effect is not required,
+	// remove the even listener with componentWillUnmount()
+
+	handleScroll = () => {
+		if (window.scrollY > 0) {
+			this.setState({
+				headerShow: true,
+			});
+		} else {
+			this.setState({
+				headerShow: false,
+			});
+		}
+	};
 
 	toggleDrawer = value => {
 		this.setState({
@@ -19,7 +38,7 @@ class Header extends Component {
 			<AppBar
 				position='fixed'
 				style={{
-					backgroundColor: '#2f2f2f',
+					backgroundColor: this.state.headerShow ? '#2f2f2f' : 'transparent',
 					boxShadow: 'none',
 					padding: '10px 0px',
 				}}
