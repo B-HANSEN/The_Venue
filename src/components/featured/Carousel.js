@@ -4,7 +4,7 @@ import slide_one from '../../resources/images/slide_one.jpg';
 import slide_two from '../../resources/images/slide_two.jpg';
 import slide_three from '../../resources/images/slide_three.jpg';
 
-const Carrousel = () => {
+const Carousel = () => {
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -14,7 +14,7 @@ const Carrousel = () => {
 
 	return (
 		<div
-			classname='carrousel_wrapper'
+			classname='carousel_wrapper'
 			style={{
 				// re-calculate height of the component to match with the screen height
 				height: `${window.innerHeight}px`,
@@ -24,7 +24,7 @@ const Carrousel = () => {
 			<Slider {...settings}>
 				<div>
 					<div
-						className='carrousel_image'
+						className='_image'
 						style={{
 							background: `url(${slide_one})`,
 							height: `${window.innerHeight}px`,
@@ -34,7 +34,7 @@ const Carrousel = () => {
 				<div>
 					{' '}
 					<div
-						className='carrousel_image'
+						className='carousel_image'
 						style={{
 							background: `url(${slide_two})`,
 							height: `${window.innerHeight}px`,
@@ -45,7 +45,7 @@ const Carrousel = () => {
 				<div>
 					{' '}
 					<div
-						className='carrousel_image'
+						className='carousel_image'
 						style={{
 							background: `url(${slide_three})`,
 							height: `${window.innerHeight}px`,
@@ -57,4 +57,4 @@ const Carrousel = () => {
 	);
 };
 
-export default Carrousel;
+export default Carousel;
