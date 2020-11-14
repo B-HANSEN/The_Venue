@@ -19,7 +19,7 @@ const VenueNfo = () => {
 										style={{ background: `url(${icon_calendar})` }}
 									></div>
 									<div className='vn_title'>Event Date & Time</div>
-									<div className='vn_desc'>7 December 2020 @ 10.00 pm</div>
+									<div className='vn_desc'>7 December 2020 @ 08.00 pm</div>
 								</div>
 							</div>
 						</div>
@@ -36,7 +36,10 @@ const VenueNfo = () => {
 									></div>
 									<div className='vn_title'>Event Location</div>
 									<div className='vn_desc'>
-										2204 Sunset Blvd. Los Angeles, CA
+										Hollywood Bowl
+										<br />N Highland Ave
+										<br />
+										Los Angeles, CA
 									</div>
 								</div>
 							</div>
