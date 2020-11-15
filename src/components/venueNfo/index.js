@@ -19,7 +19,11 @@ const VenueNfo = () => {
 										style={{ background: `url(${icon_calendar})` }}
 									></div>
 									<div className='vn_title'>Event Date & Time</div>
-									<div className='vn_desc'>7 December 2020 @ 08.00 pm</div>
+									<div className='vn_desc'>
+										7 December 2020 <br />
+										Doors @ 07.00 pm <br />
+										Start @ 08.30 pm
+									</div>
 								</div>
 							</div>
 						</div>

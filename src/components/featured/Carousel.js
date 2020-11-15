@@ -14,7 +14,7 @@ const Carousel = () => {
 
 	return (
 		<div
-			classname='carousel_wrapper'
+			className='carousel_wrapper'
 			style={{
 				// re-calculate height of the component to match with the screen height
 				height: `${window.innerHeight}px`,
