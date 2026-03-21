@@ -1,8 +1,8 @@
 import React from 'react';
 import { scroller } from 'react-scroll';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
 
 const SideDrawer = props => {
 	const scrollToElement = element => {
@@ -22,46 +22,21 @@ const SideDrawer = props => {
 			onClose={() => props.onClose(false)}
 		>
 			<List component='nav'>
-				<ListItem
-					button
-					onClick={() => {
-						scrollToElement('featured');
-					}}
-				>
+				<ListItemButton onClick={() => scrollToElement('featured')}>
 					Event starts in
-				</ListItem>
-				<ListItem
-					button
-					onClick={() => {
-						scrollToElement('venueNfo');
-					}}
-				>
+				</ListItemButton>
+				<ListItemButton onClick={() => scrollToElement('venueNfo')}>
 					Venue INFO
-				</ListItem>
-				<ListItem
-					button
-					onClick={() => {
-						scrollToElement('highlights');
-					}}
-				>
+				</ListItemButton>
+				<ListItemButton onClick={() => scrollToElement('highlights')}>
 					Highlights
-				</ListItem>
-				<ListItem
-					button
-					onClick={() => {
-						scrollToElement('pricing');
-					}}
-				>
+				</ListItemButton>
+				<ListItemButton onClick={() => scrollToElement('pricing')}>
 					Pricing
-				</ListItem>
-				<ListItem
-					button
-					onClick={() => {
-						scrollToElement('location');
-					}}
-				>
+				</ListItemButton>
+				<ListItemButton onClick={() => scrollToElement('location')}>
 					Location
-				</ListItem>
+				</ListItemButton>
 			</List>
 		</Drawer>
 	);

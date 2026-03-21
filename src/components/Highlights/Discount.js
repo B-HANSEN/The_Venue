@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
+import { Fade, Slide } from 'react-awesome-reveal';
 import MyButton from '../utils/MyButton';
 
 const Discount = () => {
@@ -22,14 +21,14 @@ const Discount = () => {
 	return (
 		<div className='center_wrapper'>
 			<div className='discount_wrapper'>
-				<Fade onReveal={() => porcentage()}>
+				<Fade>
 					<div className='discount_porcentage'>
 						<span>{state.discountStart}%</span>
 						<span>OFF</span>
 					</div>
 				</Fade>
 
-				<Slide right>
+				<Slide direction='right'>
 					<div className='discount_description'>
 						<h3>Purchase tickets before 20th June</h3>
 						<p>

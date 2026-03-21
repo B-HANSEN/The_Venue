@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import TicketIcon from '../../resources/images/icons/ticket.png';
 
 const MyButton = props => {

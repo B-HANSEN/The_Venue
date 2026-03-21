@@ -148,7 +148,9 @@ footer .footer_copyright {
 
 .vn_wrapper {
 	display: flex;
+	justify-content: center;
 	padding: 170px 0px;
+	gap: 50px;
 }
 
 .vn_item {
@@ -286,9 +288,12 @@ footer .footer_copyright {
 	display: flex;
 	flex-wrap: wrap;
 }
+.pricing_wrapper > div {
+	flex: 0 0 33.333%;
+	min-width: 0;
+}
 .pricing_wrapper .pricing_item {
-	flex-grow: 1;
-	width: 33%;
+	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
 }

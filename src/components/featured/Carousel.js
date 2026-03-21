@@ -1,58 +1,37 @@
 import React from 'react';
-import Slider from 'react-slick';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import slide_one from '../../resources/images/slide_one.jpg';
 import slide_two from '../../resources/images/slide_two.jpg';
 import slide_three from '../../resources/images/slide_three.jpg';
 
+const slides = [slide_one, slide_two, slide_three];
+
 const Carousel = () => {
-	const settings = {
-		dots: false,
-		infinite: true,
-		autoplay: true,
-		speed: 500,
-	};
+	const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })]);
 
 	return (
 		<div
 			className='carousel_wrapper'
 			style={{
-				// re-calculate height of the component to match with the screen height
 				height: `${window.innerHeight}px`,
 				overflow: 'hidden',
 			}}
 		>
-			<Slider {...settings}>
-				<div>
-					<div
-						className='_image'
-						style={{
-							background: `url(${slide_one})`,
-							height: `${window.innerHeight}px`,
-						}}
-					></div>
+			<div ref={emblaRef} style={{ overflow: 'hidden', height: '100%' }}>
+				<div style={{ display: 'flex', height: '100%' }}>
+					{slides.map((slide, i) => (
+						<div
+							key={i}
+							style={{
+								flex: '0 0 100%',
+								background: `url(${slide}) center/cover no-repeat`,
+								height: `${window.innerHeight}px`,
+							}}
+						/>
+					))}
 				</div>
-				<div>
-					{' '}
-					<div
-						className='carousel_image'
-						style={{
-							background: `url(${slide_two})`,
-							height: `${window.innerHeight}px`,
-						}}
-					></div>
-				</div>
-
-				<div>
-					{' '}
-					<div
-						className='carousel_image'
-						style={{
-							background: `url(${slide_three})`,
-							height: `${window.innerHeight}px`,
-						}}
-					></div>
-				</div>
-			</Slider>
+			</div>
 		</div>
 	);
 };
