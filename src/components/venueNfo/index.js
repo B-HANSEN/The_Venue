@@ -1,4 +1,5 @@
 import { Zoom } from 'react-awesome-reveal';
+import { EVENT } from '../../eventData';
 
 import icon_calendar from '../../resources/images/icons/calendar.png';
 import icon_location from '../../resources/images/icons/location.png';
@@ -19,9 +20,9 @@ const VenueNfo = () => {
 									></div>
 									<div className='vn_title'>Event Date & Time</div>
 									<div className='vn_desc'>
-										7 December 2020 <br />
-										Doors @ 07.00 pm <br />
-										Start @ 08.30 pm
+										{EVENT.date} <br />
+										Doors @ {EVENT.doorsTime} <br />
+										Start @ {EVENT.startTime}
 									</div>
 								</div>
 							</div>
@@ -39,10 +40,11 @@ const VenueNfo = () => {
 									></div>
 									<div className='vn_title'>Event Location</div>
 									<div className='vn_desc'>
-										Hollywood Bowl
-										<br />N Highland Ave
+										{EVENT.venueName}
 										<br />
-										Los Angeles, CA
+										{EVENT.venueStreet}
+										<br />
+										{EVENT.venueCity}
 									</div>
 								</div>
 							</div>

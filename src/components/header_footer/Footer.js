@@ -1,12 +1,13 @@
 import { Fade } from 'react-awesome-reveal';
+import { BRAND } from '../../eventData';
 
 const Footer = () => {
 	return (
 		<footer className='bck_red'>
-			<Fade delay={500}>
-				<div className='font_righteous footer_logo_venue'>The Venue</div>
+			<Fade delay={350}>
+				<div className='font_righteous footer_logo_venue'>{BRAND.name}</div>
 				<div className='footer_copyright'>
-					The Venue 2020. All rights reserved.
+					{BRAND.name} {BRAND.copyrightYear}. All rights reserved.
 				</div>
 			</Fade>
 		</footer>

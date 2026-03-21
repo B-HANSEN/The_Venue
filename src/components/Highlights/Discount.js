@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import MyButton from '../utils/MyButton';
-
-const DISCOUNT_END = 30;
+import { DISCOUNT } from '../../eventData';
 
 const Discount = () => {
 	const [count, setCount] = useState(0);
 
-	// Increments count every 50ms until it reaches DISCOUNT_END
+	// Increments count every 50ms until it reaches DISCOUNT.percentage
 	useEffect(() => {
-		if (count >= DISCOUNT_END) return;
+		if (count >= DISCOUNT.percentage) return;
 		const timer = setTimeout(() => setCount((c) => c + 1), 50);
 		return () => clearTimeout(timer);
 	}, [count]);
@@ -26,7 +25,7 @@ const Discount = () => {
 
 				<Slide direction='right'>
 					<div className='discount_description'>
-						<h3>Purchase tickets before 20th June</h3>
+						<h3>{DISCOUNT.deadlineText}</h3>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -37,7 +36,7 @@ const Discount = () => {
 							text='Purchase ticket'
 							bck='#ffa800'
 							color='#ffffff'
-							link='http://google.com'
+							link={DISCOUNT.link}
 						/>
 					</div>
 				</Slide>
