@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import slide_one from '../../resources/images/slide_one.jpg';
@@ -12,13 +12,19 @@ const Carousel = () => {
 		Autoplay({ delay: 3000 }),
 	]);
 
+	// Tracks viewport height and updates on resize
+	const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+
+	useEffect(() => {
+		const handleResize = () => setViewportHeight(window.innerHeight);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	return (
 		<div
-			className="carousel_wrapper"
-			style={{
-				height: `${window.innerHeight}px`,
-				overflow: 'hidden',
-			}}
+			className='carousel_wrapper'
+			style={{ height: `${viewportHeight}px`, overflow: 'hidden' }}
 		>
 			<div ref={emblaRef} style={{ overflow: 'hidden', height: '100%' }}>
 				<div style={{ display: 'flex', height: '100%' }}>
@@ -28,7 +34,7 @@ const Carousel = () => {
 							style={{
 								flex: '0 0 100%',
 								background: `url(${slide}) center/cover no-repeat`,
-								height: `${window.innerHeight}px`,
+								height: `${viewportHeight}px`,
 							}}
 						/>
 					))}

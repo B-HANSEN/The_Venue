@@ -1,35 +1,31 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import MyButton from '../utils/MyButton';
 
+const DISCOUNT_END = 30;
+
 const Discount = () => {
-	const [state, setState] = useState({
-		discountStart: 0,
-		discountEnd: 30,
-	});
+	const [count, setCount] = useState(0);
 
-	const porcentage = useCallback(() => {
-		if (state.discountStart < state.discountEnd) {
-			setState({ ...state, discountStart: state.discountStart + 1 });
-		}
-	}, [state]);
-
+	// Increments count every 50ms until it reaches DISCOUNT_END
 	useEffect(() => {
-		porcentage();
-	}, [porcentage]);
+		if (count >= DISCOUNT_END) return;
+		const timer = setTimeout(() => setCount((c) => c + 1), 50);
+		return () => clearTimeout(timer);
+	}, [count]);
 
 	return (
-		<div className="center_wrapper">
-			<div className="discount_wrapper">
+		<div className='center_wrapper'>
+			<div className='discount_wrapper'>
 				<Fade>
-					<div className="discount_porcentage">
-						<span>{state.discountStart}%</span>
+					<div className='discount_porcentage'>
+						<span>{count}%</span>
 						<span>OFF</span>
 					</div>
 				</Fade>
 
-				<Slide direction="right">
-					<div className="discount_description">
+				<Slide direction='right'>
+					<div className='discount_description'>
 						<h3>Purchase tickets before 20th June</h3>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -38,10 +34,10 @@ const Discount = () => {
 							nisi ut aliquip ex ea commodo consequat.
 						</p>
 						<MyButton
-							text="Purchase ticket"
-							bck="#ffa800"
-							color="#ffffff"
-							link="http://google.com"
+							text='Purchase ticket'
+							bck='#ffa800'
+							color='#ffffff'
+							link='http://google.com'
 						/>
 					</div>
 				</Slide>

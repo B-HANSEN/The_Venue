@@ -75,31 +75,32 @@ const TimeUntil = () => {
 		}
 	};
 
-	// Ticks every second to keep the countdown live
+	// Ticks every second to keep the countdown live; clears on unmount
 	useEffect(() => {
-		setInterval(() => getTimeUntil(deadline), 1000);
+		const interval = setInterval(() => getTimeUntil(deadline), 1000);
+		return () => clearInterval(interval);
 	}, [deadline]);
 
 	return (
-		<Slide direction="left" delay={1000}>
-			<div className="countdown_wrapper">
-				<div className="countdown_top">Event starts in</div>
-				<div className="countdown_bottom">
-					<div className="countdown_item">
-						<div className="countdown_time">{days}</div>
-						<div className="countdown_tag">Days</div>
+		<Slide direction='left' delay={1000}>
+			<div className='countdown_wrapper'>
+				<div className='countdown_top'>Event starts in</div>
+				<div className='countdown_bottom'>
+					<div className='countdown_item'>
+						<div className='countdown_time'>{days}</div>
+						<div className='countdown_tag'>Days</div>
 					</div>
-					<div className="countdown_item">
-						<div className="countdown_time">{hours}</div>
-						<div className="countdown_tag">HRS</div>
+					<div className='countdown_item'>
+						<div className='countdown_time'>{hours}</div>
+						<div className='countdown_tag'>HRS</div>
 					</div>
-					<div className="countdown_item">
-						<div className="countdown_time">{minutes}</div>
-						<div className="countdown_tag">MIN</div>
+					<div className='countdown_item'>
+						<div className='countdown_time'>{minutes}</div>
+						<div className='countdown_tag'>MIN</div>
 					</div>
-					<div className="countdown_item">
-						<div className="countdown_time">{seconds}</div>
-						<div className="countdown_tag">SEC</div>
+					<div className='countdown_item'>
+						<div className='countdown_time'>{seconds}</div>
+						<div className='countdown_tag'>SEC</div>
 					</div>
 				</div>
 			</div>

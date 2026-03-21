@@ -1,4 +1,3 @@
-import React from 'react';
 import { scroller } from 'react-scroll';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -17,11 +16,11 @@ const SideDrawer = (props) => {
 
 	return (
 		<Drawer
-			anchor="right"
+			anchor='right'
 			open={props.open}
 			onClose={() => props.onClose(false)}
 		>
-			<List component="nav">
+			<List component='nav'>
 				<ListItemButton onClick={() => scrollToElement('featured')}>
 					Event starts in
 				</ListItemButton>
