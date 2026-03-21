@@ -20,18 +20,18 @@ const Pricing = () => {
 	const showBoxes = () =>
 		prices.map((box, i) => (
 			<Zoom delay={delay[i]} key={i}>
-				<div className='pricing_item'>
-					<div className='pricing_inner_wrapper'>
-						<div className='pricing_title'>
+				<div className="pricing_item">
+					<div className="pricing_inner_wrapper">
+						<div className="pricing_title">
 							<span>${prices[i]}</span>
 							<span>{positions[i]}</span>
 						</div>
-						<div className='pricing_description'>{desc[i]}</div>
-						<div className='pricing_buttons'>
+						<div className="pricing_description">{desc[i]}</div>
+						<div className="pricing_buttons">
 							<MyButton
-								text='Purchase'
-								bck='#ffa800'
-								color='#ffffff'
+								text="Purchase"
+								bck="#ffa800"
+								color="#ffffff"
 								link={linkto[i]}
 							/>
 						</div>
@@ -41,10 +41,10 @@ const Pricing = () => {
 		));
 
 	return (
-		<div className='bck_black'>
-			<div className='center_wrapper pricing_section'>
+		<div className="bck_black">
+			<div className="center_wrapper pricing_section">
 				<h2>Pricing</h2>
-				<div className='pricing_wrapper'>{showBoxes()}</div>
+				<div className="pricing_wrapper">{showBoxes()}</div>
 			</div>
 		</div>
 	);

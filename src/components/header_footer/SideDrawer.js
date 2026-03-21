@@ -4,8 +4,8 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 
-const SideDrawer = props => {
-	const scrollToElement = element => {
+const SideDrawer = (props) => {
+	const scrollToElement = (element) => {
 		scroller.scrollTo(element, {
 			duration: 1500,
 			delay: 100,
@@ -17,11 +17,11 @@ const SideDrawer = props => {
 
 	return (
 		<Drawer
-			anchor='right'
+			anchor="right"
 			open={props.open}
 			onClose={() => props.onClose(false)}
 		>
-			<List component='nav'>
+			<List component="nav">
 				<ListItemButton onClick={() => scrollToElement('featured')}>
 					Event starts in
 				</ListItemButton>

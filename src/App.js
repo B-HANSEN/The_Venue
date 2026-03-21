@@ -13,25 +13,25 @@ import Footer from './components/header_footer/Footer';
 const App = () => {
 	return (
 		<div
-			className='App'
+			className="App"
 			style={{ height: '1500px', background: 'cornflowerblue' }}
 		>
 			<Header />
-			<Element name='featured'>
+			<Element name="featured">
 				<Featured />
 			</Element>
-			<Element name='venueNfo'>
+			<Element name="venueNfo">
 				<VenueNfo />
 			</Element>
-			<Element name='highlights'>
+			<Element name="highlights">
 				<Highlight />
 			</Element>
 
-			<Element name='pricing'>
+			<Element name="pricing">
 				<Pricing />
 			</Element>
 
-			<Element name='location'>
+			<Element name="location">
 				<Location />
 			</Element>
 			<Footer />

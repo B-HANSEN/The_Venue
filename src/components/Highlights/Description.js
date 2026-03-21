@@ -4,10 +4,10 @@ import { Fade } from 'react-awesome-reveal';
 const Description = () => {
 	return (
 		<Fade>
-			<div className='center_wrapper'>
+			<div className="center_wrapper">
 				<h2>Highlights</h2>
 			</div>
-			<div className='highlight_description'>
+			<div className="highlight_description">
 				"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
 				accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
 				illo inventore veritatis et quasi architecto beatae vitae dicta sunt

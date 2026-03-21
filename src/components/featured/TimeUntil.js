@@ -13,14 +13,22 @@ const getOrUpdateDeadline = () => {
 
 	// No deadline stored yet — initialise to 7 months ahead
 	if (!stored) {
-		const initial = new Date(now.getFullYear(), now.getMonth() + 7, 1).toISOString();
+		const initial = new Date(
+			now.getFullYear(),
+			now.getMonth() + 7,
+			1
+		).toISOString();
 		localStorage.setItem(DEADLINE_KEY, initial);
 		return initial;
 	}
 
 	// Trigger day = the 1st of the month immediately before the deadline
 	const deadline = new Date(stored);
-	const triggerMonth = new Date(deadline.getFullYear(), deadline.getMonth() - 1, 1);
+	const triggerMonth = new Date(
+		deadline.getFullYear(),
+		deadline.getMonth() - 1,
+		1
+	);
 	const isTriggerDay =
 		now.getDate() === 1 &&
 		now.getFullYear() === triggerMonth.getFullYear() &&
@@ -28,7 +36,11 @@ const getOrUpdateDeadline = () => {
 
 	// Roll deadline forward 6 months from today
 	if (isTriggerDay) {
-		const updated = new Date(now.getFullYear(), now.getMonth() + 6, 1).toISOString();
+		const updated = new Date(
+			now.getFullYear(),
+			now.getMonth() + 6,
+			1
+		).toISOString();
 		localStorage.setItem(DEADLINE_KEY, updated);
 		return updated;
 	}
@@ -45,9 +57,10 @@ const TimeUntil = () => {
 	const [seconds, setSeconds] = useState(0);
 
 	// Calculates remaining time and updates state; logs if the event has passed
-	const getTimeUntil = deadline => {
+	const getTimeUntil = (deadline) => {
 		const time = Date.parse(deadline) - Date.parse(new Date());
 		if (time < 0) {
+			// eslint-disable-next-line no-console
 			console.log('Event has passed.');
 		} else {
 			const seconds = Math.floor((time / 1000) % 60);
@@ -68,25 +81,25 @@ const TimeUntil = () => {
 	}, [deadline]);
 
 	return (
-		<Slide direction='left' delay={1000}>
-			<div className='countdown_wrapper'>
-				<div className='countdown_top'>Event starts in</div>
-				<div className='countdown_bottom'>
-					<div className='countdown_item'>
-						<div className='countdown_time'>{days}</div>
-						<div className='countdown_tag'>Days</div>
+		<Slide direction="left" delay={1000}>
+			<div className="countdown_wrapper">
+				<div className="countdown_top">Event starts in</div>
+				<div className="countdown_bottom">
+					<div className="countdown_item">
+						<div className="countdown_time">{days}</div>
+						<div className="countdown_tag">Days</div>
 					</div>
-					<div className='countdown_item'>
-						<div className='countdown_time'>{hours}</div>
-						<div className='countdown_tag'>HRS</div>
+					<div className="countdown_item">
+						<div className="countdown_time">{hours}</div>
+						<div className="countdown_tag">HRS</div>
 					</div>
-					<div className='countdown_item'>
-						<div className='countdown_time'>{minutes}</div>
-						<div className='countdown_tag'>MIN</div>
+					<div className="countdown_item">
+						<div className="countdown_time">{minutes}</div>
+						<div className="countdown_tag">MIN</div>
 					</div>
-					<div className='countdown_item'>
-						<div className='countdown_time'>{seconds}</div>
-						<div className='countdown_tag'>SEC</div>
+					<div className="countdown_item">
+						<div className="countdown_time">{seconds}</div>
+						<div className="countdown_tag">SEC</div>
 					</div>
 				</div>
 			</div>

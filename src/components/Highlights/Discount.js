@@ -19,17 +19,17 @@ const Discount = () => {
 	}, [porcentage]);
 
 	return (
-		<div className='center_wrapper'>
-			<div className='discount_wrapper'>
+		<div className="center_wrapper">
+			<div className="discount_wrapper">
 				<Fade>
-					<div className='discount_porcentage'>
+					<div className="discount_porcentage">
 						<span>{state.discountStart}%</span>
 						<span>OFF</span>
 					</div>
 				</Fade>
 
-				<Slide direction='right'>
-					<div className='discount_description'>
+				<Slide direction="right">
+					<div className="discount_description">
 						<h3>Purchase tickets before 20th June</h3>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -38,10 +38,10 @@ const Discount = () => {
 							nisi ut aliquip ex ea commodo consequat.
 						</p>
 						<MyButton
-							text='Purchase ticket'
-							bck='#ffa800'
-							color='#ffffff'
-							link='http://google.com'
+							text="Purchase ticket"
+							bck="#ffa800"
+							color="#ffffff"
+							link="http://google.com"
 						/>
 					</div>
 				</Slide>

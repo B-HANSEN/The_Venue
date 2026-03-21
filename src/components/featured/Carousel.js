@@ -8,11 +8,13 @@ import slide_three from '../../resources/images/slide_three.jpg';
 const slides = [slide_one, slide_two, slide_three];
 
 const Carousel = () => {
-	const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })]);
+	const [emblaRef] = useEmblaCarousel({ loop: true }, [
+		Autoplay({ delay: 3000 }),
+	]);
 
 	return (
 		<div
-			className='carousel_wrapper'
+			className="carousel_wrapper"
 			style={{
 				height: `${window.innerHeight}px`,
 				overflow: 'hidden',
