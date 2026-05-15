@@ -28,9 +28,9 @@ const Carousel = () => {
 		>
 			<div ref={emblaRef} style={{ overflow: 'hidden', height: '100%' }}>
 				<div style={{ display: 'flex', height: '100%' }}>
-					{slides.map((slide, i) => (
+					{slides.map((slide) => (
 						<div
-							key={i}
+							key={slide}
 							style={{
 								flex: '0 0 100%',
 								background: `url(${slide}) center/cover no-repeat`,

@@ -76,9 +76,6 @@ footer .footer_copyright {
 	overflow: hidden;
 }
 
-.carousel_image {
-	background-size: cover !important;
-}
 
 .artist_name {
 	position: absolute;
@@ -86,7 +83,6 @@ footer .footer_copyright {
 	left: 50%;
 	width: 400px;
 	height: 160px;
-	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	border: 2px solid white;
 }
@@ -181,8 +177,6 @@ footer .footer_copyright {
 	width: 100px;
 	height: 100px;
 	position: absolute;
-	-ms-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 	top: -54px;
 	left: 100px;
@@ -191,8 +185,8 @@ footer .footer_copyright {
 .vn_item .vn_icon {
 	width: 50px;
 	height: 50px;
-	background-size: contain !important;
-	background-repeat: no-repeat !important;
+	background-size: contain;
+	background-repeat: no-repeat;
 	position: absolute;
 	top: -30px;
 	left: 124px;

@@ -8,8 +8,8 @@ const Pricing = () => {
 			<div className='center_wrapper pricing_section'>
 				<h2>Pricing</h2>
 				<div className='pricing_wrapper'>
-					{TICKETS.map((ticket, i) => (
-						<Zoom delay={ticket.delay} key={i}>
+					{TICKETS.map((ticket) => (
+						<Zoom delay={ticket.delay} key={ticket.position}>
 							<div className='pricing_item'>
 								<div className='pricing_inner_wrapper'>
 									<div className='pricing_title'>

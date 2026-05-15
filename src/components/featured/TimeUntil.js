@@ -58,10 +58,9 @@ const TimeUntil = () => {
 
 	// Calculates remaining time and updates state; logs if the event has passed
 	const getTimeUntil = (deadline) => {
-		const time = Date.parse(deadline) - Date.parse(new Date());
+		const time = new Date(deadline).getTime() - Date.now();
 		if (time < 0) {
-			// eslint-disable-next-line no-console
-			console.log('Event has passed.');
+			return;
 		} else {
 			const seconds = Math.floor((time / 1000) % 60);
 			const minutes = Math.floor((time / 1000 / 60) % 60);
